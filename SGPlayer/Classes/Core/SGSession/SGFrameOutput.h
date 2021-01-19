@@ -158,4 +158,10 @@ typedef NS_ENUM(NSUInteger, SGFrameOutputState) {
  */
 - (void)frameOutput:(SGFrameOutput *)frameOutput didOutputFrames:(NSArray<__kindof SGFrame *> *)frames needsDrop:(BOOL(^)(void))needsDrop;
 
+@optional
+/**
+ *
+ */
+- (void)frameOutput:(SGFrameOutput *)frameOutput didOutputSEI:(NSData *)SEI;
+
 @end

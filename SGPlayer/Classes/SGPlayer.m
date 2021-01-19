@@ -601,6 +601,17 @@ NSNotificationName const SGPlayerDidChangeInfosNotification = @"SGPlayerDidChang
     }
 }
 
+- (void)playerItem:(SGPlayerItem *)playerItem didOutputSEI:(NSData *)SEI {
+    SGLockEXE00(self->_lock, ^{
+        SGBlock b1 = ^{
+            if (self.SEIOutput) {
+                self.SEIOutput(SEI);
+            }
+        };
+        return b1();
+    });
+}
+
 #pragma mark - Notification
 
 - (SGBlock)infoCallback:(SGInfoAction)action

@@ -317,4 +317,6 @@ SGPLAYER_EXTERN NSString * const SGPlayerInfoActionUserInfoKey;
  */
 @property (nonatomic, strong) NSOperationQueue *notificationQueue;
 
+@property (nonatomic, copy, nullable) void (^SEIOutput)(NSData *SEI);
+
 @end

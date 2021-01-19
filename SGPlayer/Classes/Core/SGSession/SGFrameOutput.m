@@ -14,6 +14,8 @@
 #import "SGOptions.h"
 #import "SGMacro.h"
 #import "SGLock.h"
+#import "SGPacket+Internal.h"
+#import "SGNALUnit.h"
 
 @interface SGFrameOutput () <SGPacketOutputDelegate, SGDecodeLoopDelegate>
 
@@ -333,7 +335,7 @@ SGSet11Map(void, setDemuxerOptions, setOptions, SGDemuxerOptions *, self->_packe
 - (void)packetOutput:(SGPacketOutput *)packetOutput didOutputPacket:(SGPacket *)packet
 {
     SGLockEXE10(self->_lock, ^SGBlock {
-        SGBlock b1 = ^{}, b2 = ^{};
+        SGBlock b1 = ^{}, b2 = ^{}, b3 = ^{};
         b1 = [self setFinishedTracks:packetOutput.finishedTracks];
         if ([self->_selectedTracks containsObject:packet.track]) {
             SGDecodeLoop *decoder = nil;
@@ -346,8 +348,24 @@ SGSet11Map(void, setDemuxerOptions, setOptions, SGDemuxerOptions *, self->_packe
                 [decoder putPacket:packet];
             };
         }
-        return ^{b1(); b2();};
+        b3 = [self parseSEIWithPacket:packet];
+        return ^{b1(); b2(); b3();};
     });
+}
+
+- (SGBlock)parseSEIWithPacket:(SGPacket *)packet
+{
+    SGBlock b1 = ^{
+        [packet lock];
+        SGNALUnit *nalUnit = [SGNALUnit unitFromPacket:packet.core];
+        if (nalUnit.SEI) {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(frameOutput:didOutputSEI:)]) {
+                [self.delegate frameOutput:self didOutputSEI:nalUnit.SEI];
+            }
+        }
+        [packet unlock];
+    };
+    return ^{ b1(); };
 }
 
 #pragma mark - SGDecoderDelegate
