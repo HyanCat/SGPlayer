@@ -358,12 +358,12 @@ SGSet11Map(void, setDemuxerOptions, setOptions, SGDemuxerOptions *, self->_packe
     SGBlock b1 = ^{
         [packet lock];
         SGNALUnit *nalUnit = [SGNALUnit unitFromPacket:packet.core];
+        [packet unlock];
         if (nalUnit.SEI) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(frameOutput:didOutputSEI:)]) {
                 [self.delegate frameOutput:self didOutputSEI:nalUnit.SEI];
             }
         }
-        [packet unlock];
     };
     return ^{ b1(); };
 }
