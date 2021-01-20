@@ -15,7 +15,7 @@
 #import "SGMacro.h"
 #import "SGLock.h"
 #import "SGPacket+Internal.h"
-#import "SGNALUnit.h"
+#import "SGNALUnit+Internal.h"
 
 @interface SGFrameOutput () <SGPacketOutputDelegate, SGDecodeLoopDelegate>
 

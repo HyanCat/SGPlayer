@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <libavcodec/avcodec.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,8 +37,6 @@ typedef NS_ENUM(NSInteger, NAL_UNIT_TYPE) {
 
 @property (nonatomic, assign, readonly) NAL_UNIT_TYPE unitType;
 @property (nonatomic, strong, readonly, nullable) SGNALSEI *SEI;
-
-+ (instancetype)unitFromPacket:(AVPacket *)packet;
 
 @end
 

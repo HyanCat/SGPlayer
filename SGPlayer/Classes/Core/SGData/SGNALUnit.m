@@ -7,6 +7,7 @@
 //
 
 #import "SGNALUnit.h"
+#import "SGNALUnit+Internal.h"
 
 static inline int ff_get_nal_units_type(const uint8_t * const data) {
     return data[4] & 0x1f;

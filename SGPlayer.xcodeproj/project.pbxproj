@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4752B7BD25B683A900B6D1FE /* SGNALUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752B7BB25B683A900B6D1FE /* SGNALUnit.h */; };
-		4752B7BE25B683A900B6D1FE /* SGNALUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752B7BB25B683A900B6D1FE /* SGNALUnit.h */; };
-		4752B7BF25B683A900B6D1FE /* SGNALUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752B7BB25B683A900B6D1FE /* SGNALUnit.h */; };
+		4752B7BD25B683A900B6D1FE /* SGNALUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752B7BB25B683A900B6D1FE /* SGNALUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4752B7BE25B683A900B6D1FE /* SGNALUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752B7BB25B683A900B6D1FE /* SGNALUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4752B7BF25B683A900B6D1FE /* SGNALUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752B7BB25B683A900B6D1FE /* SGNALUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4752B7C025B683A900B6D1FE /* SGNALUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4752B7BC25B683A900B6D1FE /* SGNALUnit.m */; };
 		4752B7C125B683A900B6D1FE /* SGNALUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4752B7BC25B683A900B6D1FE /* SGNALUnit.m */; };
 		4752B7C225B683A900B6D1FE /* SGNALUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4752B7BC25B683A900B6D1FE /* SGNALUnit.m */; };
+		4752C5C325B81EF700B6D1FE /* SGNALUnit+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752C5C225B81EF300B6D1FE /* SGNALUnit+Internal.h */; };
+		4752C5C825B81EF900B6D1FE /* SGNALUnit+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752C5C225B81EF300B6D1FE /* SGNALUnit+Internal.h */; };
+		4752C5CC25B81EF900B6D1FE /* SGNALUnit+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4752C5C225B81EF300B6D1FE /* SGNALUnit+Internal.h */; };
 		9C03E5EC212E616B001F0E1B /* SGMotionSensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C03E5EA212E616B001F0E1B /* SGMotionSensor.h */; };
 		9C03E5ED212E616B001F0E1B /* SGMotionSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C03E5EB212E616B001F0E1B /* SGMotionSensor.m */; };
 		9C03E5F0212E645B001F0E1B /* SGVRProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C03E5EE212E645B001F0E1B /* SGVRProjection.h */; };
@@ -596,6 +599,7 @@
 /* Begin PBXFileReference section */
 		4752B7BB25B683A900B6D1FE /* SGNALUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGNALUnit.h; sourceTree = "<group>"; };
 		4752B7BC25B683A900B6D1FE /* SGNALUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGNALUnit.m; sourceTree = "<group>"; };
+		4752C5C225B81EF300B6D1FE /* SGNALUnit+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SGNALUnit+Internal.h"; sourceTree = "<group>"; };
 		9C03E5EA212E616B001F0E1B /* SGMotionSensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGMotionSensor.h; sourceTree = "<group>"; };
 		9C03E5EB212E616B001F0E1B /* SGMotionSensor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGMotionSensor.m; sourceTree = "<group>"; };
 		9C03E5EE212E645B001F0E1B /* SGVRProjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGVRProjection.h; sourceTree = "<group>"; };
@@ -1397,6 +1401,7 @@
 				9CC649FE2181A8C000453B3E /* SGCapacity.m */,
 				4752B7BB25B683A900B6D1FE /* SGNALUnit.h */,
 				4752B7BC25B683A900B6D1FE /* SGNALUnit.m */,
+				4752C5C225B81EF300B6D1FE /* SGNALUnit+Internal.h */,
 			);
 			path = SGData;
 			sourceTree = "<group>";
@@ -1639,6 +1644,7 @@
 				9C8D6B8822C4A19500985D55 /* SGMetalYUVRenderPipeline.h in Headers */,
 				9C86385621904A0900D730EC /* SGDefines.h in Headers */,
 				9C8D6B7622C4A19500985D55 /* SGMetalSphereModel.h in Headers */,
+				4752C5C825B81EF900B6D1FE /* SGNALUnit+Internal.h in Headers */,
 				9C86384421904A0900D730EC /* SGObjectPool.h in Headers */,
 				9C86384621904A0900D730EC /* SGObjectQueue.h in Headers */,
 				9CB01C94219E863D00B36CFA /* SGMutilDemuxer.h in Headers */,
@@ -1750,6 +1756,7 @@
 				9CD79EF52190068E00E39A7D /* SGTime.h in Headers */,
 				9C8D6B7722C4A19500985D55 /* SGMetalSphereModel.h in Headers */,
 				9CD79EE82190068E00E39A7D /* SGObjectPool.h in Headers */,
+				4752C5CC25B81EF900B6D1FE /* SGNALUnit+Internal.h in Headers */,
 				9CD79EE92190068E00E39A7D /* SGObjectQueue.h in Headers */,
 				9CD79EFB2190068E00E39A7D /* SGClock+Internal.h in Headers */,
 				9CD79EFC2190068E00E39A7D /* SGAsset.h in Headers */,
@@ -1886,6 +1893,7 @@
 				9CE6F52F2004D97D00D1F4C8 /* SGPLFColor.h in Headers */,
 				9CEBCC9D217EF8E900430024 /* SGTrack+Internal.h in Headers */,
 				9C8D6B8422C4A19500985D55 /* SGMetalPlaneModel.h in Headers */,
+				4752C5C325B81EF700B6D1FE /* SGNALUnit+Internal.h in Headers */,
 				9CE6F53F2004D97D00D1F4C8 /* SGPLFImage.h in Headers */,
 				9CF15E022011ADB500585326 /* SGRenderable.h in Headers */,
 				9CE6F5532004D97D00D1F4C8 /* SGPLFView.h in Headers */,
