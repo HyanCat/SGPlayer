@@ -12,6 +12,7 @@
 #import "SGCapacity.h"
 #import "SGAsset.h"
 #import "SGFrame.h"
+#import "SGNALUnit.h"
 
 @protocol SGFrameOutputDelegate;
 
@@ -162,6 +163,6 @@ typedef NS_ENUM(NSUInteger, SGFrameOutputState) {
 /**
  *
  */
-- (void)frameOutput:(SGFrameOutput *)frameOutput didOutputSEI:(NSData *)SEI;
+- (void)frameOutput:(SGFrameOutput *)frameOutput didOutputSEI:(SGNALSEI *)SEI;
 
 @end

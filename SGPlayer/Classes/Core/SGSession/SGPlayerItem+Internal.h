@@ -13,6 +13,7 @@
 #import "SGDecoderOptions.h"
 #import "SGCapacity.h"
 #import "SGFrame.h"
+#import "SGNALUnit.h"
 
 @protocol SGPlayerItemDelegate;
 
@@ -130,6 +131,6 @@ typedef NS_ENUM(NSUInteger, SGPlayerItemState) {
 /**
  *
  */
-- (void)playerItem:(SGPlayerItem *)playerItem didOutputSEI:(NSData *)SEI;
+- (void)playerItem:(SGPlayerItem *)playerItem didOutputSEI:(SGNALSEI *)SEI;
 
 @end

@@ -421,7 +421,7 @@ SGSet1Map(void, setDecoderOptions, SGDecoderOptions *, self->_frameOutput)
     });
 }
 
-- (void)frameOutput:(SGFrameOutput *)frameOutput didOutputSEI:(NSData *)SEI {
+- (void)frameOutput:(SGFrameOutput *)frameOutput didOutputSEI:(SGNALSEI *)SEI {
     SGLockEXE00(self->_lock, ^{
         SGBlock b1 = ^{
             [self->_delegate playerItem:self didOutputSEI:SEI];

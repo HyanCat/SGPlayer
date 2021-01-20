@@ -601,11 +601,12 @@ NSNotificationName const SGPlayerDidChangeInfosNotification = @"SGPlayerDidChang
     }
 }
 
-- (void)playerItem:(SGPlayerItem *)playerItem didOutputSEI:(NSData *)SEI {
+- (void)playerItem:(SGPlayerItem *)playerItem didOutputSEI:(SGNALSEI *)SEI {
     SGLockEXE00(self->_lock, ^{
         SGBlock b1 = ^{
             if (self.SEIOutput) {
-                self.SEIOutput(SEI);
+                NSUUID *uuid = [[NSUUID alloc] initWithUUIDBytes:[SEI.uuid bytes]];
+                self.SEIOutput(uuid, SEI.data);
             }
         };
         return b1();
