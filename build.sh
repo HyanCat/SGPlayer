@@ -16,6 +16,9 @@ if [ "$ACTION" = "build" ]; then
 elif [ "$ACTION" = "clean" ]; then
     sh scripts/compile-openssl.sh $PLATFORM "clean"
     sh scripts/compile-ffmpeg.sh $PLATFORM "clean"
+elif [ "$ACTION" = "framework" ]; then
+    sh scripts/build-framework.sh $PLATFORM
+    #statements
 else
     echo "Usage:"
     echo "  build.sh iOS build"
